@@ -184,6 +184,49 @@
                 <img src="assets/images/btn-der.png" alt="Botón derecha" class="carrusel-btn carrusel-btn-right" (click)="moverDerecha()" *ngIf="currentTranslate !== maxTranslate">
                 <img src="assets/images/btn-der-disabled.png" alt="Botón derecha" class="carrusel-btn carrusel-btn-right" *ngIf="currentTranslate === maxTranslate">
             </div>
+
+            <!-- Botón principal body -->
+
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <button class="btn btn-main-body">
+                        ASOCIAR OBJETIVO
+                    </button>
+                </div>
+            </div>
+
+            <!-- Estilos para el footer -->
+            <div class="row footer-content" style="padding-top: 4rem; padding-bottom: 4rem;">
+                <div class="col-12" style="margin-left: 10%; display: grid;">
+                    <img src="assets/images/skandia_logo.png" alt="Skandia" class="img-banner" >
+                    <span class="mt-4">©  {{year}}  Skandia</span>
+                </div>
+                <div class="col-sm-12 col-lg-4 pt-3 mt-3" style="margin-left: 10%;">
+                    PBX: 658 4000 / 484 1300 <br>
+                    Línea nacional 01 8000 517 526 <br>
+                    Línea Corporativa 658 4123 <br>
+                    Av. 19 # 109A - 30 <br>
+                    Bogotá D.C., Colombia <br>
+                    <span class="fw-bold">Oficinas a nivel nacional</span><br>
+                </div>
+                <div class="col-sm-12 col-lg-4 pt-3 custom-margin">
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a class="list-nav-footer" href="#">Términos y Condiciones Canales de Servicio </a> </li>
+                        <li><a class="list-nav-footer" href="#">Defensoría del Consumidor Financiero </a> </li>
+                        <li><a class="list-nav-footer" href="#">Protección de Datos </a> </li>
+                        <li><a class="list-nav-footer" href="#">Definiciones Generales – Auto declaración FATCA y CRS </a> </li>
+                        <li><a class="list-nav-footer" href="#">Recomendaciones de Seguridad </a> </li>
+                        <li><a class="list-nav-footer" href="#">Ley de Transparencia </a> </li>
+                        <li><a class="list-nav-footer" href="#">Mapa del sitio </a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-12 col-lg-2 d-flex align-items-end justify-content-center">
+                    <a href="#"><img src="assets/images/facebook.png" alt="Skandia" class="img-banner"></a>
+                    <a href="#"><img src="assets/images/twitter.png" alt="Skandia" class="img-banner mx-4"></a>
+                    <a href="#"><img src="assets/images/youtube.png" alt="Skandia" class="img-banner"></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

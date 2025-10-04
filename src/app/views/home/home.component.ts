@@ -37,7 +37,13 @@ export class HomeComponent implements OnInit {
      */
     maxTranslate: number = 1; //Inicio en 1 para habilitar boton de mover carrusel a la derecha
 
+    /**
+     * Ancho del carrusel (dinámico para validar en móviles)
+     */
     carruselWidth: number = 0;
+
+
+    year: number = (new Date()).getFullYear()
 
     constructor(
         private homeService: HomeService //Servicio para obtener la lista de productos
@@ -51,7 +57,7 @@ export class HomeComponent implements OnInit {
             .pipe(
                 catchError((error) => {
                     console.error(error)
-                    return of({ listCard: [] } as Card);
+                    return of({ listCard: [] } as Card); // Retorno error del tipo que espera la petición
                 })
             )
             .subscribe((res: Card) => {
@@ -60,14 +66,19 @@ export class HomeComponent implements OnInit {
             })
     }
 
+    /**
+     * Método que se ejecuta después de cargar el contenido visual
+     */
     ngAfterViewInit() {
         this.carruselWidth = this.carruselRef.nativeElement.clientWidth; // equivale a tu calc(100% - 10rem)
         const trackWidth = this.carruselRef.nativeElement.querySelector('.carrusel-track').scrollWidth;
 
         this.maxTranslate = this.carruselWidth - trackWidth; // hasta dónde se puede mover
-        console.log('Ancho carrusel:', this.carruselWidth, 'Max translate:', this.maxTranslate);
     }
 
+    /**
+     * Método para mover el carrusel a la izquierda
+     */
     moverIzquierda() {
         //Se suma los clicks con el ancho de la card + el margen
         this.currentTranslate += this.step;
@@ -77,8 +88,11 @@ export class HomeComponent implements OnInit {
         }
     }
 
+    /**
+     * Método para mover el carrusel a la derecha
+     */
     moverDerecha() {
-        // calcula el ancho total de todas las cards
+        // calcula el ancho total de todas las cards (sumo 1 porque hay una card estática, que no viene del arreglo del api)
         const totalWidth = (this.lstProductosCard.length + 1) * this.step;
 
         // usamos el ancho real del carrusel (responsive)

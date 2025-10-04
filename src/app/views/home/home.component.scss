@@ -129,7 +129,7 @@
     gap: 20px;
     overflow: hidden;
     position: relative;
-    width: calc(100% - 10rem); 
+    width: calc(100% - 10rem);
     // width: 800px;
 }
 
@@ -140,8 +140,8 @@
 // }
 
 .carrusel-track {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
+    display: flex;
+    transition: transform 0.4s ease-in-out;
 }
 
 .carrusel-card {
@@ -153,14 +153,15 @@
     margin-right: 20px;
     flex-shrink: 0;
 }
+
 .carrusel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 10;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
 }
 
 .carrusel-btn-left {
@@ -255,9 +256,46 @@
 }
 
 .btn-card a {
-    
+
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     color: #FFF;
     font-weight: bold;
+}
+
+// Estilos para el botón principal del body
+
+.btn-main-body {
+    background: #E2E2E2;
+    width: 260px;
+    height: 50px;
+    border-radius: 22px;
+    color: #3F3F3F;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-main-body:hover {
+    background: #00C83C;
+    color: #FFF;
+}
+
+// Estilos para el footer
+.footer-content {
+    box-shadow: 0px 0px 6px #00000029;
+    font-family: 'Verdana', sans-serif;
+    font-size: 14px;
+    color: #3F3F3F;
+    text-align: left;
+}
+
+.list-nav-footer {
+    color: #3F3F3F;
+}
+
+@media (max-width: 576px) {
+    .custom-margin {
+        margin-left: 10%;
+    }
 }

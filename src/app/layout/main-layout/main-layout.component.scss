@@ -76,6 +76,10 @@
     .banner {
         height: 100px;
     }
+
+    .app-body {
+        height: calc(100vh - 100px);
+    }
 }
 
 @media (max-width: 767px) {
@@ -85,6 +89,10 @@
 
     .banner {
         height: 160px;
+    }
+
+    .app-body {
+        height: calc(100vh - 160px);
     }
 }
 
@@ -164,6 +172,7 @@
     overflow-y: auto;
     padding: 0px !important;
     overflow-x: hidden;
+    height: calc(100vh - 80px);
 }
 
 @media (max-width: 767px) {

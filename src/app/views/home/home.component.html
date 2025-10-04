@@ -90,11 +90,14 @@
 
             <!-- Carrusel con cards -->
             <div class="carrusel-container position-relative mb-5">
+
+                <!-- Botón para correr el carrusel a la izquierda (habilitado y deshabilitado) -->
                 <img src="assets/images/btn-izq.png" alt="Botón izquierda" class="carrusel-btn carrusel-btn-left" (click)="moverIzquierda()" *ngIf="currentTranslate != 0">
                 <img src="assets/images/btn-izq-disabled.png" alt="Botón izquierda" class="carrusel-btn carrusel-btn-left" *ngIf="currentTranslate === 0">
 
                 <div #carrusel class="carrusel-track d-flex" [ngStyle]="{'transform': 'translateX(' + currentTranslate + 'px)'}">
                     
+                    <!-- Iteración de arreglo de productos para crear las cards -->
                     <div class="carrusel-card shadow border" *ngFor="let producto of lstProductosCard; let i = index" 
                         style="border-bottom: 3px solid #A4D071 !important;">
                         <div class="row">
@@ -154,6 +157,7 @@
                         </div>
                     </div>       
                     
+                    <!-- Card estática diferente al arreglo de productos -->
                     <div class="carrusel-card shadow border card-img"  
                         style="border-bottom: 3px solid #A4D071 !important;">
                         <div class="row">
@@ -181,8 +185,18 @@
                     </div>       
                 </div>
 
+                <!-- Botón para correr el carrusel a la derecha (habilitado y deshabilitado) -->
                 <img src="assets/images/btn-der.png" alt="Botón derecha" class="carrusel-btn carrusel-btn-right" (click)="moverDerecha()" *ngIf="currentTranslate !== maxTranslate">
                 <img src="assets/images/btn-der-disabled.png" alt="Botón derecha" class="carrusel-btn carrusel-btn-right" *ngIf="currentTranslate === maxTranslate">
+            </div>
+
+            <div class="row text-center d-flex justify-content-center" *ngIf="errorCardList">
+                <div class="col-8">
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        No se pudo cargar toda la información de los productos. Algunos elementos pueden no estar disponibles.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
             </div>
 
             <!-- Botón principal body -->
@@ -201,14 +215,18 @@
                     <img src="assets/images/skandia_logo.png" alt="Skandia" class="img-banner" >
                     <span class="mt-4">©  {{year}}  Skandia</span>
                 </div>
+
+                <!-- Contácto de la entidad -->
                 <div class="col-sm-12 col-lg-4 pt-3 mt-3" style="margin-left: 10%;">
-                    PBX: 658 4000 / 484 1300 <br>
-                    Línea nacional 01 8000 517 526 <br>
+                    PBX: <span class="text-primary-footer">658 4000</span> / <span class="text-primary-footer">484 1300</span> <br>
+                    Línea nacional <span class="text-primary-footer">01 8000 517 526</span> <br>
                     Línea Corporativa 658 4123 <br>
                     Av. 19 # 109A - 30 <br>
                     Bogotá D.C., Colombia <br>
                     <span class="fw-bold">Oficinas a nivel nacional</span><br>
                 </div>
+
+                <!-- Links informativos de la entidad -->
                 <div class="col-sm-12 col-lg-4 pt-3 custom-margin">
                     <ul style="list-style: none; padding: 0; margin: 0;">
                         <li><a class="list-nav-footer" href="#">Términos y Condiciones Canales de Servicio </a> </li>
@@ -221,10 +239,11 @@
                     </ul>
                 </div>
 
-                <div class="col-sm-12 col-lg-2 d-flex align-items-end justify-content-center">
-                    <a href="#"><img src="assets/images/facebook.png" alt="Skandia" class="img-banner"></a>
-                    <a href="#"><img src="assets/images/twitter.png" alt="Skandia" class="img-banner mx-4"></a>
-                    <a href="#"><img src="assets/images/youtube.png" alt="Skandia" class="img-banner"></a>
+                <!-- Redes sociales de la entidad -->
+                <div class="col-sm-12 col-lg-2 d-flex align-items-end justify-content-center mt-2">
+                    <a href="#"><img src="assets/images/facebook.png" alt="Facebook" class="img-banner"></a>
+                    <a href="#"><img src="assets/images/twitter.png" alt="Twitter" class="img-banner mx-4"></a>
+                    <a href="#"><img src="assets/images/youtube.png" alt="Youtube" class="img-banner"></a>
                 </div>
             </div>
         </div>

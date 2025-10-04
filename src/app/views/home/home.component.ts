@@ -42,8 +42,15 @@ export class HomeComponent implements OnInit {
      */
     carruselWidth: number = 0;
 
-
+    /**
+     * Variable para obtener el año actual
+     */
     year: number = (new Date()).getFullYear()
+
+    /**
+     * Bandera para capturar error del API de productos
+     */
+    errorCardList: boolean = false;
 
     constructor(
         private homeService: HomeService //Servicio para obtener la lista de productos
@@ -57,6 +64,7 @@ export class HomeComponent implements OnInit {
             .pipe(
                 catchError((error) => {
                     console.error(error)
+                    this.errorCardList = true;
                     return of({ listCard: [] } as Card); // Retorno error del tipo que espera la petición
                 })
             )

@@ -19,7 +19,7 @@ export class HomeService {
 
     /**
      * Método que permite obtener la lista de productos
-     * @returns { Array } Lista de productos para las cards
+     * @returns { Object } Objeto que tiene por dentro un arreglo de productos
      */
     getCardList(): Observable<Card>{
         return this.http.get<Card>(this.apiUrl)

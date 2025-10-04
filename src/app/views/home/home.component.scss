@@ -294,8 +294,14 @@
     color: #3F3F3F;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1017px) {
     .custom-margin {
         margin-left: 10%;
+        margin-right: 10%;
     }
+}
+
+.text-primary-footer {
+    color: #00C83C;
+    font-weight: bold;
 }

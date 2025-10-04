@@ -6,7 +6,7 @@
         <div class="col-sm-12 col-md-6 header-content">
             <div class="row">
                 <div class="col-2 d-flex align-items-center justify-content-center">
-                    <!-- Menú -->
+                    <!-- Menú expanded -->
                     <button class="btn border-0 bg-transparent d-flex align-items-center" type="button"
                         (click)="isExpanded = !isExpanded">
                         <img src="assets/images/menu.svg" alt="" class="img-banner-menu">
@@ -43,6 +43,7 @@
     </div>
 </header>
 
+<!-- Side bar con método expanded -->
 <div class="row fixrow">
     <nav class="sidebar" [class.expanded]="isExpanded">
         <ul class="sidebar-menu">
@@ -87,6 +88,7 @@
         </ul>
     </nav>
 
+    <!-- Body de la aplicación, funciona con el enrutamiento de Angular -->
     <div class="app-body">
         <router-outlet></router-outlet>
     </div>

@@ -1,59 +1,47 @@
-# PruebaTecnicaFrontendSkandia
+# 📌 Prueba Técnica Frontend - Skandia
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.17.
+Este proyecto es una prueba técnica realizada con **Angular 19** y **Bootstrap 5.3**.  
+Consiste en una aplicación web sencilla con un sidebar, cards y un carrusel de productos.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Tecnologías usadas
+- [Angular 19](https://angular.dev/)  
+- [Bootstrap 5.3](https://getbootstrap.com/)  
+- [RxJS 7](https://rxjs.dev/)  
+- TypeScript  
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## ✅ Requisitos previos
+Asegúrate de tener instalado en tu PC:
+- **Node.js** >= 18 (recomendado 20 LTS)  
+- **npm** >= 10  
+- (Opcional) Angular CLI de forma global:
+  ```bash
+  npm install -g @angular/cli 
+---
 
-## Code scaffolding
+## 📦 Instalación
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+  ```bash
+git clone https://github.com/Juanskpc/prueba_tecnica_frontend_skandia
+cd prueba-tecnica-frontend-skandia
+  ```
+---
 
-```bash
-ng generate component component-name
-```
+Instala las dependencias:
+  ```bash
+  npm install
+  ```
+--- 
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🚀 Ejecución en desarrollo
 
-```bash
-ng generate --help
-```
+Para correr el servidor de desarrollo ejecuta:
 
-## Building
+  ```bash
+  npm start
+  ```
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Esto levanta la app en http://localhost:4200

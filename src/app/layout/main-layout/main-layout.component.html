@@ -7,12 +7,13 @@
             <div class="row">
                 <div class="col-2 d-flex align-items-center justify-content-center">
                     <!-- Menú -->
-                    <button class="btn border-0 bg-transparent d-flex align-items-center" type="button" (click)="isExpanded = !isExpanded">
+                    <button class="btn border-0 bg-transparent d-flex align-items-center" type="button"
+                        (click)="isExpanded = !isExpanded">
                         <img src="assets/images/menu.svg" alt="" class="img-banner-menu">
                     </button>
                 </div>
                 <div class="col-10 d-flex align-items-center justify-content-center">
-                    
+
 
                     <!-- Logo -->
                     <img src="assets/images/skandia_logo.png" alt="Skandia" class="img-banner me-3">
@@ -27,7 +28,7 @@
                 <div class="col-sm-12 d-flex align-items-center justify-content-center">
                     <img src="assets/images/feliz.png" alt="Plan Financial" class="ms-3 me-2">
                     <a href="#" class="text-with-subtitle fw-bold">Tu Financial Planner</a>
-                    
+
                     <img src="assets/images/mano.png" alt="Aportes" class="ms-4 me-2">
                     <a href="#" class="text-with-subtitle fw-bold me-4">Aportes</a>
 
@@ -46,45 +47,47 @@
     <nav class="sidebar" [class.expanded]="isExpanded">
         <ul class="sidebar-menu">
             <li>
-                <a routerLink="/home"
-                    routerLinkActive="active"
-                    [routerLinkActiveOptions]="{ exact: true }">
+                <a class="opcion-sidebar" routerLink="/app/home" routerLinkActive="active">
                     <img src="assets/images/home.png" alt="Inicio" class="icon">
-                    <span *ngIf="isExpanded" class="ms-2">Inicio</span>
+                    <span *ngIf="isExpanded">Inicio</span>
                 </a>
             </li>
             <li>
-                <a  routerLink="/contratos"
-                    routerLinkActive="active"
-                    [routerLinkActiveOptions]="{ exact: true }">
+                <a class="opcion-sidebar" routerLink="/app/contratos" routerLinkActive="active">
                     <img src="assets/images/hoja.png" alt="Inicio" class="icon">
-                    <!-- <span>Inicio</span> -->
+                    <span *ngIf="isExpanded">Contratos</span>
                 </a>
             </li>
             <li>
-                <a  routerLink="/acciones"
-                    routerLinkActive="active"
-                    [routerLinkActiveOptions]="{ exact: true }">
-                    <img src="assets/images/accion.png" alt="Inicio" class="icon">
-                    <!-- <span>Inicio</span> -->
+                <a class="opcion-sidebar" routerLink="/app/acciones" routerLinkActive="active">
+                    <img src="assets/images/accion.png" alt="Acciones" class="icon">
+                    <span *ngIf="isExpanded">Acciones</span>
                 </a>
             </li>
             <li>
-                <a  routerLink="/objetivos"
-                    routerLinkActive="active"
-                    [routerLinkActiveOptions]="{ exact: true }">
-                    <img src="assets/images/objetivo.png" alt="Inicio" class="icon">
-                    <!-- <span>Inicio</span> -->
+                <a class="opcion-sidebar" routerLink="/app/objetivos" routerLinkActive="active">
+                    <img src="assets/images/objetivo.png" alt="Objetivos" class="icon">
+                    <span *ngIf="isExpanded">Objetivos</span>
                 </a>
             </li>
             <li>
-                <a  routerLink="/herramientas"
-                    routerLinkActive="active"
+                <a class="opcion-sidebar" routerLink="/app/objetivos" routerLinkActive="active"
                     [routerLinkActiveOptions]="{ exact: true }">
-                    <img src="assets/images/herramienta.png" alt="Inicio" class="icon">
-                    <!-- <span>Inicio</span> -->
+                    <img src="assets/images/herramienta.png" alt="Objetivos" class="icon">
+                    <span *ngIf="isExpanded">Objetivos</span>
+                </a>
+            </li>
+            <li>
+                <a class="opcion-sidebar" routerLink="/objetivos" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">
+                    <img src="assets/images/atencion.png" alt="Atención" class="icon">
+                    <span *ngIf="isExpanded">Servicio al cliente</span>
                 </a>
             </li>
         </ul>
     </nav>
+
+    <div class="app-body">
+        <router-outlet></router-outlet>
+    </div>
 </div>

@@ -1,0 +1,189 @@
+<div class="row">
+    <!-- Banner con imagen cielo estrellado -->
+    <div class="col-12 banner-cielo">
+
+        <!-- Bontón ir al inicio -->
+        <div class="col-12 d-flex align-items-center btn-inicio">
+            <img src="assets/images/home-body.png" alt="Inicio" class="icon">
+            <a href="" class="text-inicio ms-2">Ir al inicio</a>
+        </div>
+
+        <!-- Texto principal, secundario y card -->
+        <div class="row d-flex justify-content-center mt-3">
+            <div class="col-12 text-main text-center">
+                <span>¡Tu objetivo a sido agregado exitosamente!</span>
+            </div>
+            <div class="col-12 text-sec text-center">
+                <span>¡Te hemos enviado un correo con la notificación!</span>
+            </div>
+
+            <!-- Card principal -->
+            <div class="col-sm-8 col-md-6 col-lg-4 rounded shadow card-main">
+                <div class="row d-flex justify-content-between pt-3">
+                    <div class="col-sm-12 col-lg-6 items-card-span">
+                        <span class="text-card-main">Conocer a mi sobrino</span>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 items-card-link">
+                        <a href="#" class="text-card-link">Revisar objetivo</a>
+                    </div>
+
+                    <div class="col-sm-12 col-lg-6 items-card-span">
+                        <span class="text-card-sec">Categoría: Bienestar</span>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 "></div>
+                </div>
+
+                <div class="row d-flex justify-content-around pt-3 text-center">
+                    <div class="col-sm-12 col-lg-3 tag-card">
+                        <span>En esta fecha:</span>
+                        <p class="rounded" style="background-color: #A5D7E1;">
+                            Diciembre/2025
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-lg-3 tag-card">
+                        <span>Lograrás</span>
+                        <p class="rounded" style="background-color: #FECD72;">
+                            $6.000.000
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-lg-3 tag-card">
+                        <span>En esta fecha:</span>
+                        <p class="rounded" style="background-color: #95DBB7;">
+                            $0
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row align-items-center pt-1">
+                    <div class="col-sm-12 col-lg-9">
+                        <img src="assets/images/check.png" alt="">
+                        <a href="#" class="text-card-footer ms-2">¡Asocia productos para monitorear su progreso!</a>
+                    </div>
+
+                    <div class="col-sm-12 col-lg-3 text-end p-0 m-0 rounded">
+                        <img src="assets/images/montania.png" alt="Montaña con bandera"
+                            style="width: 120px; border-bottom-right-radius: .3rem;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto del body -->
+            <div class="row pt-5">
+                <div class="col-12">
+                    <div class="col-12 text-body text-center text-body-main">
+                        <p>
+                            ¡Vamos a por esos <span class="text-body-important">$6.000.000</span> para <span
+                                class="text-body-important"> Conocer mi Sobrino</span>!
+                        </p>
+                    </div>
+                    <div class="col-12 text-body text-center text-body-secondary">
+                        <p>
+                            ¡A través de tus productos y nuestros rendimientos podremos lograrlo!
+                        </p>
+                        <p class="fw-bold">
+                            Asocia tus productos o adquiere uno nuevo. <img src="assets/images/pregunta-cuadro.png"
+                                alt="">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carrusel con cards -->
+            <div class="carrusel-container position-relative mb-5">
+                <img src="assets/images/btn-izq.png" alt="Botón izquierda" class="carrusel-btn carrusel-btn-left" (click)="moverIzquierda()" *ngIf="currentTranslate != 0">
+                <img src="assets/images/btn-izq-disabled.png" alt="Botón izquierda" class="carrusel-btn carrusel-btn-left" *ngIf="currentTranslate === 0">
+
+                <div #carrusel class="carrusel-track d-flex" [ngStyle]="{'transform': 'translateX(' + currentTranslate + 'px)'}">
+                    
+                    <div class="carrusel-card shadow border" *ngFor="let producto of lstProductosCard; let i = index" 
+                        style="border-bottom: 3px solid #A4D071 !important;">
+                        <div class="row">
+                            <div class="col-12 mb-4">
+                                <input class="form-check-input float-end" type="checkbox" value="" id="checkDefault">
+                            </div>
+                            <div class="col-12 carrusel-card-title">
+                                <span>{{producto.nameProduct}}</span>
+                            </div>
+                            <div class="col-12 carrusel-card-subtitle mb-4">
+                                <span>#{{producto.numberProduct}}</span>
+                            </div>
+
+                            <!-- Separador -->
+                            <hr> 
+
+                            <div class="col-12 carrusel-card-title mt-2">
+                                <span>Ya cuentas con:</span>
+                            </div>
+                            <div class="col-12 carrusel-card-value">
+                                <span>${{producto.balanceProduct | number}}</span>
+                            </div>
+    
+                            <div class="col-12 card-secondary-carrusel">
+                                <div class="row text-center">
+                                    <div class="col-12 image-container">
+                                        <img [src]="i == 0 ? 'assets/images/feliz.png' : i == 1 ? 'assets/images/trofeo.png' : i == 2 ? 'assets/images/mano-corazon.png' : 'assets/images/mano.png'"
+                                            alt="">
+                                    </div>
+                                    <div class="col-12">
+                                        <p *ngIf="i == 0" class="text-carrusel">
+                                            !Cuentas con <span class="valor-card">${{producto.balanceProduct |
+                                                number}}</span> para tu objetivo! <br>
+                                            Te recomendamos aportar <strong>$388,000 mensuales</strong> para lograrlo en
+                                            <strong>diciembre del 2025.</strong>
+                                        </p>
+                                        <p *ngIf="i == 1" class="text-carrusel">
+                                            !Súper ya tienes los <span class="valor-card">${{producto.balanceProduct |
+                                                number}}</span> para tu objetivo! <br>
+                                            <strong>Úsalos cuando lo desees.</strong>
+                                        </p>
+                                        <p *ngIf="i == 2" class="text-carrusel">
+                                            !Ya tienes los <span class="valor-card">${{producto.balanceProduct |
+                                                number}}</span> para tu objetivo! <br>
+                                            Úsalos el <strong>01/ene/26</strong> que finaliza la vigencia de tu póliza.
+                                        </p>
+                                        <p *ngIf="i >= 3" class="text-carrusel">
+                                            ¡Ya lograste un avance de
+                                            <span class="valor-card">${{producto.balanceProduct | number}}</span> en tu
+                                            objetivo! <br>
+                                            Alcanza la meta antes del
+                                            <strong>15/jul/26</strong>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+                    
+                    <div class="carrusel-card shadow border card-img"  
+                        style="border-bottom: 3px solid #A4D071 !important;">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <img src="assets/images/medalla.png" alt="Medalla" style="margin-top: -25px;">
+                                    </div>
+                                    <div class="col-6 tag-card-carrusel text-center">
+                                        <p style="background-color: #FE9200;">
+                                            Productos recomendados
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 carrusel-card-title">
+                                ¡Conoce nuevos productos de ahorro e inversión para  <span class="valor-card">Conocer sobrino!</span>
+                            </div>
+                            
+                            <div class="col-12 btn-card d-flex align-items-center justify-content-center">
+                                <a href="#" class="text-center">Explora ahora</a>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+
+                <img src="assets/images/btn-der.png" alt="Botón derecha" class="carrusel-btn carrusel-btn-right" (click)="moverDerecha()" *ngIf="currentTranslate !== maxTranslate">
+                <img src="assets/images/btn-der-disabled.png" alt="Botón derecha" class="carrusel-btn carrusel-btn-right" *ngIf="currentTranslate === maxTranslate">
+            </div>
+        </div>
+    </div>
+</div>

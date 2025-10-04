@@ -98,7 +98,7 @@
                 <div #carrusel class="carrusel-track d-flex" [ngStyle]="{'transform': 'translateX(' + currentTranslate + 'px)'}">
                     
                     <!-- Iteración de arreglo de productos para crear las cards -->
-                    <div class="carrusel-card shadow border" *ngFor="let producto of lstProductosCard; let i = index" 
+                    <div #cardCarrusel class="carrusel-card shadow border" *ngFor="let producto of lstProductosCard; let i = index" 
                         style="border-bottom: 3px solid #A4D071 !important;">
                         <div class="row">
                             <div class="col-12 mb-4">
@@ -158,7 +158,7 @@
                     </div>       
                     
                     <!-- Card estática diferente al arreglo de productos -->
-                    <div class="carrusel-card shadow border card-img"  
+                    <div #cardCarrusel class="carrusel-card shadow border card-img"  
                         style="border-bottom: 3px solid #A4D071 !important;">
                         <div class="row">
                             <div class="col-12">

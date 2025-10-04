@@ -17,6 +17,7 @@ Consiste en una aplicación web sencilla con un sidebar, cards y un carrusel de 
 Asegúrate de tener instalado en tu PC:
 - **Node.js** >= 18 (recomendado 20 LTS)  
 - **npm** >= 10  
+- **git** (clonar repositorio)
 - (Opcional) Angular CLI de forma global:
   ```bash
   npm install -g @angular/cli 
@@ -25,14 +26,19 @@ Asegúrate de tener instalado en tu PC:
 ## 📦 Instalación
 
   ```bash
-git clone https://github.com/Juanskpc/prueba_tecnica_frontend_skandia
-cd prueba-tecnica-frontend-skandia
+    git clone https://github.com/Juanskpc/prueba_tecnica_frontend_skandia
   ```
+Ubicarse en el proyecto
+
+  ```bash
+    cd prueba_tecnica_frontend_skandia
+  ```
+
 ---
 
 Instala las dependencias:
   ```bash
-  npm install
+    npm install
   ```
 --- 
 

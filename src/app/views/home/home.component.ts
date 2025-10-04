@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent implements OnInit {
 
     @ViewChild('carrusel') carruselRef!: ElementRef;
+    @ViewChild('cardCarrusel') cardCarruselRef!: ElementRef;
 
     /**
      * Lista de productos para iterar las cards
@@ -25,7 +26,7 @@ export class HomeComponent implements OnInit {
     /**
      * Paso que da el usuario en px
      */
-    step: number = 352 + 20; // Sumo el ancho de la card con el margen
+    step: number = 0; // Sumo el ancho de la card con el margen
 
     /**
      * Cantidad de traslación que lleva el carrusel
@@ -79,6 +80,7 @@ export class HomeComponent implements OnInit {
      */
     ngAfterViewInit() {
         this.carruselWidth = this.carruselRef.nativeElement.clientWidth; // equivale a tu calc(100% - 10rem)
+        this.step = this.cardCarruselRef.nativeElement.clientWidth + 20; // equivale a tu ancho del card + 20px margen
         const trackWidth = this.carruselRef.nativeElement.querySelector('.carrusel-track').scrollWidth;
 
         this.maxTranslate = this.carruselWidth - trackWidth; // hasta dónde se puede mover
